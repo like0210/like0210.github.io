@@ -4,300 +4,375 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orris London - Fine Jewelry</title>
-  <style>
-    /* 基础样式 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #fff;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* 导航栏 */
-    header {
-      position: fixed;
-      width: 100%;
-      padding: 20px 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: 300;
-      letter-spacing: 3px;
-      color: #000;
-      text-decoration: none;
-    }
-    
-    .contact {
-      font-size: 14px;
-    }
-    
-    .contact a {
-      color: #000;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .contact a:hover {
-      color: #b8860b;
-    }
-    
-    /* 主图部分 */
-    .hero {
-      height: 100vh;
-      background-color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 20px;
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 40px;
-    }
-    
-    .hero-title {
-      font-size: 48px;
-      font-weight: 300;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
-    
-    .hero-subtitle {
-      font-size: 18px;
-      font-weight: 300;
-      margin-bottom: 30px;
-    }
-    
-    /* 关于部分 */
-    .about {
-      padding: 100px 0;
-      text-align: center;
-    }
-    
-    .section-title {
-      font-size: 28px;
-      font-weight: 300;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 1px;
-      background-color: #b8860b;
-    }
-    
-    .about-text {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-    
-
-    
-    /* 联系部分 */
-    .contact-section {
-      padding: 100px 0;
-      text-align: center;
-    }
-    
-    .contact-info {
-      margin-top: 40px;
-    }
-    
-    .contact-item {
-      margin-bottom: 20px;
-    }
-    
-    .contact-item h3 {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 5px;
-    }
-    
-    .contact-item p {
-      font-size: 16px;
-      color: #666;
-    }
-    
-    .social-links {
-      margin-top: 30px;
-    }
-    
-    .social-link {
-      display: inline-block;
-      margin: 0 10px;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 50%;
-      color: #333;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    
-    .social-link:hover {
-      background-color: #b8860b;
-      border-color: #b8860b;
-      color: #fff;
-    }
-    
-    /* 页脚 */
-    footer {
-      padding: 30px 0;
-      background-color: #f5f5f5;
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-    }
-    
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .logo {
-        margin-bottom: 10px;
-      }
-      
-      .hero-title {
-        font-size: 36px;
-      }
-      
-      .hero-subtitle {
-        font-size: 16px;
-      }
-      
-      .showcase-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/orris-london-css.css">
 </head>
 <body>
-  <!-- 导航栏 -->
-  <header>
+  <!-- Header & Navigation -->
+  <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo">ORRIS LONDON</a>
-        <div class="contact">
-          <a href="mailto:keli1002@outlook.com">keli1002@outlook.com</a>
+        <div class="logo-container">
+          <a href="#" class="logo">ORRIS LONDON</a>
         </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#collection" class="nav-link">Collection</a></li>
+            <li class="nav-item"><a href="#instagram" class="nav-link">Instagram</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+          <a href="mailto:keli1002@outlook.com" class="contact-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+        <button id="menu-toggle" class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </div>
   </header>
   
-  <!-- 主图部分 -->
-  <section class="hero">
-    <img src="image/logo.png" alt="Orris London Fine Jewelry" class="hero-image">
-    <div class="hero-content">
-      <h1 class="hero-title">ORRIS LONDON</h1>
-      <p class="hero-subtitle">Fine Jewelry</p>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenu" class="close-menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-contact">
+      <a href="mailto:keli1002@outlook.com">keli1002@outlook.com</a>
     </div>
-  </section>
+  </div>
+  <div id="overlay" class="overlay"></div>
   
-  <!-- 关于部分 -->
-  <section class="about">
-    <div class="container">
-      <h2 class="section-title">OUR STORY</h2>
-      <div class="about-text">
-        <p>Founded in London with a passion for creating timeless beauty, Orris London represents the pinnacle of fine jewelry creation. Our journey began with a simple belief: that every piece of jewelry should tell a unique story and be crafted with the utmost attention to detail.</p>
-        <p>Today, we continue to create exquisite pieces that celebrate life's most precious moments, combining rare gemstones with innovative design to create heirlooms for the modern era.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-slider">
+      <div class="slide active">
+        <div class="slide-content">
+          <h1 class="animate-fade-in">Timeless Elegance</h1>
+          <p class="animate-fade-in">Discover our exquisite collection of handcrafted fine jewelry, designed to celebrate life's most precious moments.</p>
+          <a href="#collection" class="primary-btn animate-fade-in">Explore Collection</a>
+        </div>
+        <div class="slide-img">
+          <img src="images/logo.jpg" alt="Orris London Fine Jewelry">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h1>Artisan Craftsmanship</h1>
+          <p>Each piece is meticulously crafted by our master jewelers, combining traditional techniques with contemporary design.</p>
+          <a href="#about" class="primary-btn">Our Story</a>
+        </div>
+        <div class="slide-img">
+          <img src="images/logo.jpg" alt="Orris London Craftsmanship">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h1>Bespoke Creations</h1>
+          <p>Let us transform your vision into a unique piece of jewelry that tells your personal story.</p>
+          <a href="#contact" class="primary-btn">Contact Us</a>
+        </div>
+        <div class="slide-img">
+          <img src="images/logo.jpg" alt="Orris London Bespoke Jewelry">
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
   
-
-  
-  <!-- 联系部分 -->
-  <section class="contact-section">
+  <!-- About Section -->
+  <section id="about" class="about-section">
     <div class="container">
-      <h2 class="section-title">CONTACT US</h2>
-      <div class="contact-info">  
-        <div class="contact-item">
-          <h3>Get In Touch</h3>
-          <p>Email: keli1002@outlook.com</p>
+      <div class="section-header">
+        <h2>Our Story</h2>
+        <p>The art of fine jewelry making</p>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-frame">
+            <img src="images/logo.jpg" alt="Orris London Workshop">
+          </div>
         </div>
-        
-        <div class="social-links">
-          <a href="#" class="social-link">FB</a>
-          <a href="#" class="social-link">IG</a>
-          <a href="#" class="social-link">PT</a>
+        <div class="about-text">
+          <p>Founded in London with a passion for creating timeless beauty, Orris London represents the pinnacle of fine jewelry creation. Our journey began with a simple belief: that every piece of jewelry should tell a unique story and be crafted with the utmost attention to detail.</p>
+          <p>Today, we continue to create exquisite pieces that celebrate life's most precious moments, combining rare gemstones with innovative design to create heirlooms for the modern era.</p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/jewelry-icon.svg" alt="Craftsmanship">
+              </div>
+              <h3>Artisan Craftsmanship</h3>
+              <p>Handcrafted by master jewelers</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/jewelry-icon.svg" alt="Materials">
+              </div>
+              <h3>Finest Materials</h3>
+              <p>Ethically sourced gemstones</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/jewelry-icon.svg" alt="Design">
+              </div>
+              <h3>Timeless Design</h3>
+              <p>Contemporary elegance</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- 页脚 -->
-  <footer>
+  <!-- Collection Section -->
+  <section id="collection" class="collection-section">
     <div class="container">
-      <p>&copy; 2025 Orris London. All Rights Reserved.</p>
+      <div class="section-header">
+        <h2>Our Collection</h2>
+        <p>Exquisite pieces for every occasion</p>
+      </div>
+      <div class="collection-filter">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="rings">Rings</button>
+        <button class="category-btn" data-category="necklaces">Necklaces</button>
+        <button class="category-btn" data-category="earrings">Earrings</button>
+        <button class="category-btn" data-category="bracelets">Bracelets</button>
+      </div>
+      <div class="collection-grid">
+        <!-- Collection Items -->
+        <div class="collection-item" data-category="rings">
+          <div class="item-image">
+            <div class="image-overlay">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="item-info">
+            <h3>Diamond Solitaire</h3>
+            <p>Platinum ring with ethically sourced diamond</p>
+          </div>
+        </div>
+        <div class="collection-item" data-category="necklaces">
+          <div class="item-image">
+            <div class="image-overlay">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="item-info">
+            <h3>Sapphire Pendant</h3>
+            <p>18k gold necklace with blue sapphire</p>
+          </div>
+        </div>
+        <div class="collection-item" data-category="earrings">
+          <div class="item-image">
+            <div class="image-overlay">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="item-info">
+            <h3>Pearl Drop</h3>
+            <p>White gold earrings with South Sea pearls</p>
+          </div>
+        </div>
+        <div class="collection-item" data-category="bracelets">
+          <div class="item-image">
+            <div class="image-overlay">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="item-info">
+            <h3>Tennis Bracelet</h3>
+            <p>Diamond bracelet in 18k rose gold</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Instagram Section -->
+  <section id="instagram" class="instagram-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Follow Us on Instagram</h2>
+        <p>Get inspired by our latest creations</p>
+      </div>
+      <div class="instagram-grid">
+        <!-- Instagram Items -->
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 1">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 2">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 3">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 4">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 5">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="images/logo.jpg" alt="Instagram Post 6">
+          <div class="instagram-overlay">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p><a href="mailto:keli1002@outlook.com">keli1002@outlook.com</a></p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Location</h3>
+            <p>London, United Kingdom</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="primary-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Quick View Modal -->
+  <div id="quickViewModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+      <div class="product-details">
+        <div class="product-image">
+          <img src="images/logo.jpg" alt="Product">
+        </div>
+        <div class="product-info">
+          <h2>Diamond Solitaire Ring</h2>
+          <p class="product-description">A stunning solitaire ring featuring a brilliant-cut diamond set in platinum. The minimalist design allows the beauty of the ethically sourced diamond to take center stage.</p>
+          <div class="product-meta">
+            <p><strong>Material:</strong> Platinum</p>
+            <p><strong>Stone:</strong> Diamond</p>
+            <p><strong>Carat:</strong> 1.0</p>
+          </div>
+          <div class="product-actions">
+            <div class="quantity">
+              <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+              <input type="number" value="1" min="1">
+              <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+            </div>
+            <button class="primary-btn">Inquire Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>ORRIS LONDON</h3>
+          <p>Fine Jewelry</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#collection">Collection</a></li>
+              <li><a href="#instagram">Instagram</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Orris London. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // 简单的滚动效果
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('header');
-      
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-          header.style.padding = '10px 0';
-        } else {
-          header.style.padding = '20px 0';
-        }
-      });
-    });
-  </script>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="js/orris-london-js.js"></script>
 </body>
 </html>

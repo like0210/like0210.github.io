@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize components
   initHeaderScroll();
   initHeroSlider();
-  initTestimonialSlider();
   initCollectionFilter();
   initMobileMenu();
   initModals();
   initProductQuantity();
+  initBackToTop();
+  initSmoothScroll();
+  initInstagramFeed();
 });
 
 // Header scroll effect
@@ -310,22 +312,145 @@ function initProductQuantity() {
 }
 
 // Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
       
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// Back to Top button functionality
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("backToTop");
+  
+  if (!backToTopBtn) return;
+  
+  // Show/hide button based on scroll position
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
     }
   });
-});
+  
+  // Scroll to top when clicked
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
+// Instagram Feed functionality
+function initInstagramFeed() {
+  const instagramGrid = document.querySelector('.instagram-grid');
+  
+  if (!instagramGrid) return;
+  
+  // Instagram Graph API configuration
+  const accessToken = 'YOUR_INSTAGRAM_ACCESS_TOKEN'; // Replace with your actual access token
+  const userId = 'YOUR_INSTAGRAM_USER_ID'; // Replace with your Instagram user ID
+  const limit = 6; // Number of posts to display
+  
+  // API endpoint for Instagram Graph API
+  const apiUrl = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${accessToken}&limit=${limit}`;
+  
+  // Fetch Instagram posts
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Instagram API request failed');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Clear existing placeholder content
+      instagramGrid.innerHTML = '';
+      
+      // Process and display Instagram posts
+      if (data && data.data && data.data.length > 0) {
+        data.data.forEach(post => {
+          // Create Instagram item element
+          const instagramItem = document.createElement('a');
+          instagramItem.href = post.permalink;
+          instagramItem.className = 'instagram-item';
+          instagramItem.target = '_blank';
+          
+          // Create image element
+          const img = document.createElement('img');
+          img.src = post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url;
+          img.alt = post.caption ? post.caption.substring(0, 50) + '...' : 'Instagram Post';
+          
+          // Create overlay element
+          const overlay = document.createElement('div');
+          overlay.className = 'instagram-overlay';
+          
+          // Create icon element
+          const icon = document.createElement('i');
+          icon.className = 'fab fa-instagram';
+          
+          // Assemble the elements
+          overlay.appendChild(icon);
+          instagramItem.appendChild(img);
+          instagramItem.appendChild(overlay);
+          
+          // Add to grid
+          instagramGrid.appendChild(instagramItem);
+          
+          // Add click event listener
+          instagramItem.addEventListener('click', function(e) {
+            // Let the link handle navigation to Instagram
+          });
+        });
+      } else {
+        // Display a message if no posts are available
+        instagramGrid.innerHTML = '<p class="no-posts">No Instagram posts available at the moment.</p>';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching Instagram posts:', error);
+      
+      // Display error message and fallback to placeholder images
+      instagramGrid.innerHTML = '';
+      
+      // Create 6 placeholder items
+      for (let i = 0; i < 6; i++) {
+        const instagramItem = document.createElement('a');
+        instagramItem.href = '#';
+        instagramItem.className = 'instagram-item';
+        
+        const img = document.createElement('img');
+        img.src = 'images/logo.jpg';
+        img.alt = 'Instagram Post ' + (i + 1);
+        
+        const overlay = document.createElement('div');
+        overlay.className = 'instagram-overlay';
+        
+        const icon = document.createElement('i');
+        icon.className = 'fab fa-instagram';
+        
+        overlay.appendChild(icon);
+        instagramItem.appendChild(img);
+        instagramItem.appendChild(overlay);
+        
+        instagramGrid.appendChild(instagramItem);
+      }
+    });
+}
 
 // Form submission handling
 const contactForm = document.getElementById('contactForm');
