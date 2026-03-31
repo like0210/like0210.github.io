@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  // ─── Language Toggle ───────────────────────────────────────
+  // ─── Language System ────────────────────────────────────────
   var savedLang = localStorage.getItem('lang') || 'en';
   document.documentElement.setAttribute('data-lang', savedLang);
   document.documentElement.setAttribute('lang', savedLang);
@@ -17,34 +17,78 @@
     zh: 'Ke Li（李可）是一位驻伦敦的当代珠宝艺术家，皇家艺术学院硕士，探索珠宝与人体的共生关系。'
   };
 
-  function toggleLang() {
-    var current = document.documentElement.getAttribute('data-lang');
-    var next = current === 'en' ? 'zh' : 'en';
-    document.documentElement.setAttribute('data-lang', next);
-    document.documentElement.setAttribute('lang', next);
-    localStorage.setItem('lang', next);
-    updateLangButtons(next);
-    // Update page metadata
-    document.title = metaTitle[next];
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('lang', lang);
+    document.title = metaTitle[lang];
     var descEl = document.querySelector('meta[name="description"]');
-    if (descEl) descEl.setAttribute('content', metaDesc[next]);
+    if (descEl) descEl.setAttribute('content', metaDesc[lang]);
+    highlightActiveLang(lang);
   }
 
-  function updateLangButtons(lang) {
-    var label = lang === 'en' ? '中文' : 'EN';
-    document.querySelectorAll('#langToggle, #langToggleMobile').forEach(function (btn) {
-      btn.textContent = label;
+  function highlightActiveLang(lang) {
+    // Desktop: highlight active option in dropdown
+    document.querySelectorAll('.lang-option').forEach(function (btn) {
+      btn.classList.toggle('font-medium', btn.getAttribute('data-lang-value') === lang);
+      btn.classList.toggle('text-muted', btn.getAttribute('data-lang-value') !== lang);
+    });
+    // Mobile: highlight active flag
+    document.querySelectorAll('.lang-option-mobile').forEach(function (btn) {
+      var isActive = btn.getAttribute('data-lang-value') === lang;
+      btn.classList.toggle('ring-2', isActive);
+      btn.classList.toggle('ring-primary', isActive);
+      btn.classList.toggle('opacity-50', !isActive);
     });
   }
 
-  // Init lang
-  updateLangButtons(savedLang);
+  // Init
   document.title = metaTitle[savedLang];
   var descMeta = document.querySelector('meta[name="description"]');
   if (descMeta) descMeta.setAttribute('content', metaDesc[savedLang]);
+  highlightActiveLang(savedLang);
 
-  document.getElementById('langToggle').addEventListener('click', toggleLang);
-  document.getElementById('langToggleMobile').addEventListener('click', toggleLang);
+  // ─── Desktop Language Dropdown ─────────────────────────────
+  var langToggleBtn = document.getElementById('langToggle');
+  var langMenu = document.getElementById('langMenu');
+
+  function openLangMenu() {
+    langMenu.classList.remove('opacity-0', 'pointer-events-none');
+    langMenu.classList.add('opacity-100');
+    langToggleBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeLangMenu() {
+    langMenu.classList.add('opacity-0', 'pointer-events-none');
+    langMenu.classList.remove('opacity-100');
+    langToggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  langToggleBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var isOpen = langToggleBtn.getAttribute('aria-expanded') === 'true';
+    if (isOpen) { closeLangMenu(); } else { openLangMenu(); }
+  });
+
+  // Desktop dropdown options
+  document.querySelectorAll('.lang-option').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLang(btn.getAttribute('data-lang-value'));
+      closeLangMenu();
+    });
+  });
+
+  // Mobile flag options
+  document.querySelectorAll('.lang-option-mobile').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLang(btn.getAttribute('data-lang-value'));
+    });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', function () {
+    closeLangMenu();
+  });
 
   // ─── Dynamic Copyright Year ───────────────────────────────
   var year = new Date().getFullYear();
