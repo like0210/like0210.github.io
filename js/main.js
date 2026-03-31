@@ -11,10 +11,21 @@
   document.documentElement.setAttribute('data-lang', savedLang);
   document.documentElement.setAttribute('lang', savedLang);
 
-  var metaTitle = { en: 'Ke Li — Contemporary Jewellery Artist', zh: 'Ke Li — 当代珠宝艺术家' };
+  var metaTitle = {
+    en: 'Ke Li — Contemporary Jewellery Artist',
+    fr: 'Ke Li — Artiste Joaillière Contemporaine',
+    de: 'Ke Li — Zeitgenössische Schmuckkünstlerin',
+    zh: 'Ke Li — 当代珠宝艺术家',
+    ja: 'Ke Li — コンテンポラリージュエリーアーティスト',
+    ko: 'Ke Li — 현대 주얼리 아티스트'
+  };
   var metaDesc = {
     en: 'Ke Li is a contemporary jewellery artist based in London. RCA graduate exploring the symbiotic relationship between jewellery and the human form.',
-    zh: 'Ke Li（李可）是一位驻伦敦的当代珠宝艺术家，皇家艺术学院硕士，探索珠宝与人体的共生关系。'
+    fr: 'Ke Li est une artiste joaillière contemporaine basée à Londres. Diplômée du RCA, elle explore la relation symbiotique entre le bijou et la forme humaine.',
+    de: 'Ke Li ist eine zeitgenössische Schmuckkünstlerin in London. RCA-Absolventin, die die symbiotische Beziehung zwischen Schmuck und dem menschlichen Körper erforscht.',
+    zh: 'Ke Li（李可）是一位驻伦敦的当代珠宝艺术家，皇家艺术学院硕士，探索珠宝与人体的共生关系。',
+    ja: 'Ke Liはロンドンを拠点とするコンテンポラリージュエリーアーティスト。RCA修了、ジュエリーと人体の共生関係を探求。',
+    ko: 'Ke Li는 런던에 거주하는 현대 주얼리 아티스트입니다. RCA 졸업, 주얼리와 인체의 공생 관계를 탐구합니다.'
   };
 
   function setLang(lang) {
@@ -141,10 +152,9 @@
 
   // ─── Dynamic Copyright Year ───────────────────────────────
   var year = new Date().getFullYear();
-  var yearEl = document.getElementById('copyrightYear');
-  var yearElZh = document.getElementById('copyrightYearZh');
-  if (yearEl) yearEl.textContent = year;
-  if (yearElZh) yearElZh.textContent = year;
+  document.querySelectorAll('.copyright-year').forEach(function (el) {
+    el.textContent = year;
+  });
 
   // ─── Header Scroll Effect ─────────────────────────────────
   var header = document.getElementById('header');

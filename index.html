@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-white text-secondary antialiased">
@@ -19,39 +20,47 @@
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-      <!-- Logo -->
       <a href="#hero" class="font-heading text-xl md:text-2xl tracking-[0.15em] uppercase font-light">
         Ke Li
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8">
-        <a href="#works" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
-           data-nav-link>
+        <a href="#works" class="text-sm tracking-[0.1em] uppercase nav-link-underline" data-nav-link>
           <span data-lang-content="en">Works</span>
+          <span data-lang-content="fr">Oeuvres</span>
+          <span data-lang-content="de">Werke</span>
           <span data-lang-content="zh">作品</span>
+          <span data-lang-content="ja">作品</span>
+          <span data-lang-content="ko">작품</span>
         </a>
-        <a href="#about" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
-           data-nav-link>
+        <a href="#about" class="text-sm tracking-[0.1em] uppercase nav-link-underline" data-nav-link>
           <span data-lang-content="en">About</span>
+          <span data-lang-content="fr">Profil</span>
+          <span data-lang-content="de">Profil</span>
           <span data-lang-content="zh">关于</span>
+          <span data-lang-content="ja">紹介</span>
+          <span data-lang-content="ko">소개</span>
         </a>
-        <a href="#contact" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
-           data-nav-link>
+        <a href="#contact" class="text-sm tracking-[0.1em] uppercase nav-link-underline" data-nav-link>
           <span data-lang-content="en">Contact</span>
+          <span data-lang-content="fr">Contact</span>
+          <span data-lang-content="de">Kontakt</span>
           <span data-lang-content="zh">联系</span>
+          <span data-lang-content="ja">連絡</span>
+          <span data-lang-content="ko">연락</span>
         </a>
         <div class="relative ml-4" id="langDropdown">
-          <button id="langToggle" class="text-sm leading-none p-1 hover:opacity-70 transition-opacity duration-300 grayscale" aria-label="Switch language" aria-expanded="false" aria-haspopup="true" aria-controls="langMenu">
+          <button id="langToggle" class="text-sm leading-none p-1 hover:opacity-70 transition-opacity duration-300" aria-label="Switch language" aria-expanded="false" aria-haspopup="true" aria-controls="langMenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </button>
-          <div id="langMenu" class="absolute right-0 top-full mt-2 bg-white border border-border shadow-md py-1 min-w-[120px] opacity-0 pointer-events-none invisible transition-opacity duration-200 z-50" role="menu" aria-hidden="true">
-            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="en" role="menuitemradio" tabindex="-1">
-              🇬🇧 English
-            </button>
-            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="zh" role="menuitemradio" tabindex="-1">
-              🇨🇳 中文
-            </button>
+          <div id="langMenu" class="absolute right-0 top-full mt-2 bg-white border border-border shadow-md py-1 min-w-[140px] opacity-0 pointer-events-none invisible transition-opacity duration-200 z-50" role="menu" aria-hidden="true">
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="en" role="menuitemradio" tabindex="-1">🇬🇧 English</button>
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="fr" role="menuitemradio" tabindex="-1">🇫🇷 Fran&ccedil;ais</button>
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="de" role="menuitemradio" tabindex="-1">🇩🇪 Deutsch</button>
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="zh" role="menuitemradio" tabindex="-1">🇨🇳 中文</button>
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="ja" role="menuitemradio" tabindex="-1">🇯🇵 日本語</button>
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="ko" role="menuitemradio" tabindex="-1">🇰🇷 한국어</button>
           </div>
         </div>
       </nav>
@@ -71,19 +80,35 @@
     <nav class="flex flex-col items-center gap-8">
       <a href="#works" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
         <span data-lang-content="en">Works</span>
+        <span data-lang-content="fr">Oeuvres</span>
+        <span data-lang-content="de">Werke</span>
         <span data-lang-content="zh">作品</span>
+        <span data-lang-content="ja">作品</span>
+        <span data-lang-content="ko">작품</span>
       </a>
       <a href="#about" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
         <span data-lang-content="en">About</span>
+        <span data-lang-content="fr">Profil</span>
+        <span data-lang-content="de">Profil</span>
         <span data-lang-content="zh">关于</span>
+        <span data-lang-content="ja">紹介</span>
+        <span data-lang-content="ko">소개</span>
       </a>
       <a href="#contact" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
         <span data-lang-content="en">Contact</span>
+        <span data-lang-content="fr">Contact</span>
+        <span data-lang-content="de">Kontakt</span>
         <span data-lang-content="zh">联系</span>
+        <span data-lang-content="ja">連絡</span>
+        <span data-lang-content="ko">연락</span>
       </a>
-      <div class="flex gap-4 mt-6">
+      <div class="flex flex-wrap justify-center gap-3 mt-6">
         <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="en" aria-label="English">🇬🇧</button>
+        <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="fr" aria-label="Français">🇫🇷</button>
+        <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="de" aria-label="Deutsch">🇩🇪</button>
         <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="zh" aria-label="中文">🇨🇳</button>
+        <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="ja" aria-label="日本語">🇯🇵</button>
+        <button class="lang-option-mobile text-2xl p-2 rounded-full hover:bg-surface transition-colors duration-200" data-lang-value="ko" aria-label="한국어">🇰🇷</button>
       </div>
     </nav>
   </div>
@@ -99,16 +124,23 @@
       </h1>
       <p class="text-sm md:text-base tracking-[0.2em] uppercase text-muted animate-slide-up" style="animation-delay: 0.3s;">
         <span data-lang-content="en">Contemporary Jewellery Artist</span>
+        <span data-lang-content="fr">Artiste Joailli&egrave;re Contemporaine</span>
+        <span data-lang-content="de">Zeitgen&ouml;ssische Schmuckk&uuml;nstlerin</span>
         <span data-lang-content="zh">当代珠宝艺术家</span>
+        <span data-lang-content="ja">コンテンポラリージュエリーアーティスト</span>
+        <span data-lang-content="ko">현대 주얼리 아티스트</span>
       </p>
       <div class="mt-12 animate-fade-in" style="animation-delay: 0.8s;">
         <a href="#works" class="inline-block text-xs tracking-[0.2em] uppercase border-b border-primary pb-1 hover:pb-2 transition-all duration-300">
           <span data-lang-content="en">View Works</span>
+          <span data-lang-content="fr">Voir les Oeuvres</span>
+          <span data-lang-content="de">Werke Ansehen</span>
           <span data-lang-content="zh">查看作品</span>
+          <span data-lang-content="ja">作品を見る</span>
+          <span data-lang-content="ko">작품 보기</span>
         </a>
       </div>
     </div>
-    <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style="animation-delay: 1.2s;">
       <div class="w-px h-12 bg-primary/30 mx-auto mb-2"></div>
     </div>
@@ -119,7 +151,11 @@
     <div class="reveal">
       <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider text-center mb-4">
         <span data-lang-content="en">Works</span>
+        <span data-lang-content="fr">Oeuvres</span>
+        <span data-lang-content="de">Werke</span>
         <span data-lang-content="zh">作品</span>
+        <span data-lang-content="ja">作品</span>
+        <span data-lang-content="ko">작품</span>
       </h2>
       <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
     </div>
@@ -134,58 +170,64 @@
       <!-- Image Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
         <button class="reveal overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="0" aria-label="View Breaking — Piece 1">
-          <img src="images/works/breaking-1-thumb.jpg"
-               data-full="images/works/breaking-1.jpg"
-               alt="Breaking — Piece 1"
-               class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-               loading="lazy">
+          <img src="images/works/breaking-1-thumb.jpg" data-full="images/works/breaking-1.jpg" alt="Breaking — Piece 1" class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
         </button>
         <button class="reveal overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="1" aria-label="View Breaking — Piece 2">
-          <img src="images/works/breaking-2-thumb.jpg"
-               data-full="images/works/breaking-2.jpg"
-               alt="Breaking — Piece 2"
-               class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-               loading="lazy">
+          <img src="images/works/breaking-2-thumb.jpg" data-full="images/works/breaking-2.jpg" alt="Breaking — Piece 2" class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
         </button>
         <button class="reveal md:col-span-2 max-w-2xl mx-auto w-full overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="2" aria-label="View Breaking — Piece 3">
-          <img src="images/works/breaking-3-thumb.jpg"
-               data-full="images/works/breaking-3.jpg"
-               alt="Breaking — Piece 3"
-               class="w-full aspect-[2/3] md:aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-               loading="lazy">
+          <img src="images/works/breaking-3-thumb.jpg" data-full="images/works/breaking-3.jpg" alt="Breaking — Piece 3" class="w-full aspect-[2/3] md:aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
         </button>
       </div>
 
       <!-- Work Details -->
       <div class="max-w-2xl mx-auto reveal">
         <div class="mb-8 text-sm text-muted space-y-1">
-          <p data-lang-content="en">
-            <span class="text-secondary">Materials:</span> Silver, natural pig casings, gouache
-          </p>
-          <p data-lang-content="zh">
-            <span class="text-secondary">材料：</span>银、天然猪肠衣、水粉
-          </p>
-          <p data-lang-content="en">
-            <span class="text-secondary">Type:</span> Bracelet / Necklace / Shoulder piece
-          </p>
-          <p data-lang-content="zh">
-            <span class="text-secondary">类型：</span>手镯 / 项链 / 肩饰
-          </p>
-          <p data-lang-content="en">
-            <span class="text-secondary">Techniques:</span> Thermal pigment integration, organic tension shaping
-          </p>
-          <p data-lang-content="zh">
-            <span class="text-secondary">工艺：</span>热颜料融合、有机张力塑形
-          </p>
+          <p data-lang-content="en"><span class="text-secondary">Materials:</span> Silver, natural pig casings, gouache</p>
+          <p data-lang-content="fr"><span class="text-secondary">Mat&eacute;riaux :</span> Argent, boyaux naturels de porc, gouache</p>
+          <p data-lang-content="de"><span class="text-secondary">Materialien:</span> Silber, nat&uuml;rliche Schweinedarm, Gouache</p>
+          <p data-lang-content="zh"><span class="text-secondary">材料：</span>银、天然猪肠衣、水粉</p>
+          <p data-lang-content="ja"><span class="text-secondary">素材：</span>銀、天然豚腸、グワッシュ</p>
+          <p data-lang-content="ko"><span class="text-secondary">재료:</span> 은, 천연 돼지 장막, 과슈</p>
+
+          <p data-lang-content="en"><span class="text-secondary">Type:</span> Bracelet / Necklace / Shoulder piece</p>
+          <p data-lang-content="fr"><span class="text-secondary">Type :</span> Bracelet / Collier / Pi&egrave;ce d'&eacute;paule</p>
+          <p data-lang-content="de"><span class="text-secondary">Typ:</span> Armband / Halskette / Schulterst&uuml;ck</p>
+          <p data-lang-content="zh"><span class="text-secondary">类型：</span>手镯 / 项链 / 肩饰</p>
+          <p data-lang-content="ja"><span class="text-secondary">種類：</span>ブレスレット / ネックレス / ショルダーピース</p>
+          <p data-lang-content="ko"><span class="text-secondary">유형:</span> 팔찌 / 목걸이 / 숄더 피스</p>
+
+          <p data-lang-content="en"><span class="text-secondary">Techniques:</span> Thermal pigment integration, organic tension shaping</p>
+          <p data-lang-content="fr"><span class="text-secondary">Techniques :</span> Int&eacute;gration thermique de pigments, fa&ccedil;onnage par tension organique</p>
+          <p data-lang-content="de"><span class="text-secondary">Techniken:</span> Thermische Pigmentintegration, organische Spannungsformung</p>
+          <p data-lang-content="zh"><span class="text-secondary">工艺：</span>热颜料融合、有机张力塑形</p>
+          <p data-lang-content="ja"><span class="text-secondary">技法：</span>熱顔料統合、有機テンション成形</p>
+          <p data-lang-content="ko"><span class="text-secondary">기법:</span> 열 안료 통합, 유기적 장력 성형</p>
         </div>
 
         <div data-lang-content="en" class="text-sm leading-relaxed text-muted space-y-4">
           <p>By combining organic membranes with internal armatures, this work simulates the morphological transformations driven by shifting emotional landscapes. It manifests through various states of struggle, fluidity, and sharpness. The natural shrinkage of the membrane during the drying process represents a dual movement: a quest for structural support and a form of self-imposed constraint. These pieces capture the evolving forms that emerge from the emotional flux between establishing defence mechanisms and seeking the boundaries of comfort.</p>
           <p>The translucent membrane serves as a symbol for the soul or the subconscious, while the rigid metal framework acts as a metaphor for the shackles of the material world. The progression from rounded latency to sharp confrontation is more than a physical material process — it is a visual mapping of internal reactions as they manifest into external forms.</p>
         </div>
+        <div data-lang-content="fr" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>En combinant des membranes organiques avec des armatures internes, cette &oelig;uvre simule les transformations morphologiques entra&icirc;n&eacute;es par des paysages &eacute;motionnels changeants. Elle se manifeste &agrave; travers divers &eacute;tats de lutte, de fluidit&eacute; et d'acuit&eacute;. Le r&eacute;tr&eacute;cissement naturel de la membrane pendant le processus de s&eacute;chage repr&eacute;sente un double mouvement : une qu&ecirc;te de soutien structurel et une forme de contrainte auto-impos&eacute;e.</p>
+          <p>La membrane translucide sert de symbole pour l'&acirc;me ou le subconscient, tandis que l'armature m&eacute;tallique rigide agit comme une m&eacute;taphore des cha&icirc;nes du monde mat&eacute;riel. La progression de la latence arrondie &agrave; la confrontation aigu&euml; est plus qu'un processus mat&eacute;riel physique — c'est une cartographie visuelle des r&eacute;actions internes qui se manifestent en formes ext&eacute;rieures.</p>
+        </div>
+        <div data-lang-content="de" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>Durch die Kombination organischer Membranen mit inneren Ger&uuml;sten simuliert dieses Werk die morphologischen Transformationen, die durch sich ver&auml;ndernde emotionale Landschaften angetrieben werden. Es manifestiert sich durch verschiedene Zust&auml;nde des Kampfes, der Flie&szlig;f&auml;higkeit und der Sch&auml;rfe. Das nat&uuml;rliche Schrumpfen der Membran w&auml;hrend des Trocknungsprozesses repr&auml;sentiert eine doppelte Bewegung: ein Streben nach struktureller Unterst&uuml;tzung und eine Form selbst auferlegter Beschr&auml;nkung.</p>
+          <p>Die durchscheinende Membran dient als Symbol f&uuml;r die Seele oder das Unterbewusstsein, w&auml;hrend das starre Metallger&uuml;st als Metapher f&uuml;r die Fesseln der materiellen Welt fungiert. Der &Uuml;bergang von gerundeter Latenz zu scharfer Konfrontation ist mehr als ein physischer Materialprozess — es ist eine visuelle Kartierung innerer Reaktionen, die sich in &auml;u&szlig;eren Formen manifestieren.</p>
+        </div>
         <div data-lang-content="zh" class="text-sm leading-relaxed text-muted space-y-4">
           <p>通过将有机薄膜与内部骨架相结合，这件作品模拟了由不断变化的情感景观驱动的形态转变。它通过挣扎、流动和尖锐的各种状态来呈现。薄膜在干燥过程中的自然收缩代表着一种双重运动：对结构支撑的追寻，以及一种自我施加的约束。这些作品捕捉了在建立防御机制与寻找舒适边界之间的情感波动中涌现的演变形态。</p>
           <p>半透明的薄膜象征着灵魂或潜意识，而坚硬的金属框架则隐喻着物质世界的枷锁。从圆润的潜伏到尖锐的对抗，不仅仅是一个物理材料过程——它是内在反应显化为外在形态的视觉映射。</p>
+        </div>
+        <div data-lang-content="ja" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>有機膜と内部骨格を組み合わせることで、この作品は変化する感情の風景によって駆動される形態変容をシミュレートしています。闘争、流動性、鋭さのさまざまな状態を通じて表現されます。乾燥過程における膜の自然な収縮は、構造的支持への探求と自己に課した拘束という二重の動きを表しています。</p>
+          <p>半透明の膜は魂や潜在意識の象徴として機能し、硬い金属フレームワークは物質世界の束縛のメタファーとして機能します。丸みを帯びた潜伏から鋭い対峙への進行は、単なる物理的な材料プロセス以上のものです——それは内的反応が外的形態として顕在化する視覚的マッピングです。</p>
+        </div>
+        <div data-lang-content="ko" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>유기막과 내부 골격을 결합하여 이 작품은 변화하는 감정의 풍경에 의해 추동되는 형태적 변환을 시뮬레이션합니다. 투쟁, 유동성, 날카로움의 다양한 상태를 통해 나타납니다. 건조 과정에서 막의 자연스러운 수축은 구조적 지지에 대한 탐색과 자기 부과된 제약이라는 이중 운동을 나타냅니다.</p>
+          <p>반투명한 막은 영혼이나 잠재의식의 상징으로, 단단한 금속 프레임워크는 물질 세계의 속박에 대한 은유로 기능합니다. 둥근 잠복에서 날카로운 대면으로의 진행은 단순한 물리적 재료 과정 이상입니다 — 그것은 내적 반응이 외적 형태로 나타나는 시각적 매핑입니다.</p>
         </div>
       </div>
     </article>
@@ -197,51 +239,88 @@
       <div class="reveal">
         <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider text-center mb-4">
           <span data-lang-content="en">About</span>
+          <span data-lang-content="fr">Profil</span>
+          <span data-lang-content="de">Profil</span>
           <span data-lang-content="zh">关于</span>
+          <span data-lang-content="ja">紹介</span>
+          <span data-lang-content="ko">소개</span>
         </h2>
         <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start max-w-5xl mx-auto">
-        <!-- Image -->
         <div class="reveal overflow-hidden">
           <img src="images/works/breaking-2.jpg" alt="Ke Li — Artist" class="w-full aspect-[4/5] object-cover" loading="lazy" decoding="async">
         </div>
 
-        <!-- Bio -->
         <div class="reveal">
-          <!-- Artist Statement -->
           <div data-lang-content="en" class="space-y-6">
             <p class="text-base leading-relaxed">Ke Li is a contemporary jewellery artist currently based in London. She regards jewellery as a fluid narrative medium, continuously challenging the traditional definitions of materials and exploring innovative ways of wearing pieces on the body.</p>
             <p class="text-sm leading-relaxed text-muted">Her work investigates the symbiotic relationship between jewellery and the human form, specifically focusing on the emotional resonance that emerges between the wearer and the object under varying postures and states. Through the choreography of wearing and the deliberate use of sharp or rounded forms, she manifests and communicates the most subtle and delicate of human emotions.</p>
           </div>
+          <div data-lang-content="fr" class="space-y-6">
+            <p class="text-base leading-relaxed">Ke Li est une artiste joailli&egrave;re contemporaine actuellement bas&eacute;e &agrave; Londres. Elle consid&egrave;re le bijou comme un m&eacute;dium narratif fluide, remettant continuellement en question les d&eacute;finitions traditionnelles des mat&eacute;riaux et explorant des fa&ccedil;ons innovantes de porter des pi&egrave;ces sur le corps.</p>
+            <p class="text-sm leading-relaxed text-muted">Son travail explore la relation symbiotique entre le bijou et la forme humaine, en se concentrant sp&eacute;cifiquement sur la r&eacute;sonance &eacute;motionnelle qui &eacute;merge entre le porteur et l'objet sous diff&eacute;rentes postures et &eacute;tats. &Agrave; travers la chor&eacute;graphie du port et l'utilisation d&eacute;lib&eacute;r&eacute;e de formes aigu&euml;s ou arrondies, elle manifeste et communique les &eacute;motions humaines les plus subtiles et d&eacute;licates.</p>
+          </div>
+          <div data-lang-content="de" class="space-y-6">
+            <p class="text-base leading-relaxed">Ke Li ist eine zeitgen&ouml;ssische Schmuckk&uuml;nstlerin, die derzeit in London lebt. Sie betrachtet Schmuck als ein flie&szlig;endes narratives Medium, das die traditionellen Definitionen von Materialien st&auml;ndig hinterfragt und innovative Trageweisen erforscht.</p>
+            <p class="text-sm leading-relaxed text-muted">Ihre Arbeit untersucht die symbiotische Beziehung zwischen Schmuck und dem menschlichen K&ouml;rper, wobei sie sich besonders auf die emotionale Resonanz konzentriert, die zwischen Tr&auml;ger und Objekt in verschiedenen Haltungen und Zust&auml;nden entsteht. Durch die Choreografie des Tragens und den bewussten Einsatz scharfer oder abgerundeter Formen manifestiert und kommuniziert sie die subtilsten und zartesten menschlichen Emotionen.</p>
+          </div>
           <div data-lang-content="zh" class="space-y-6">
             <p class="text-base leading-relaxed">李可是一位目前居住在伦敦的当代珠宝艺术家。她将珠宝视为一种流动的叙事媒介，不断挑战材料的传统定义，探索将作品佩戴于身体上的创新方式。</p>
             <p class="text-sm leading-relaxed text-muted">她的作品探索珠宝与人体之间的共生关系，特别关注佩戴者与物品在不同姿态和状态下产生的情感共鸣。通过佩戴的编排以及对尖锐或圆润形态的刻意运用，她呈现并传达了人类最微妙、最细腻的情感。</p>
+          </div>
+          <div data-lang-content="ja" class="space-y-6">
+            <p class="text-base leading-relaxed">Ke Liはロンドンを拠点とするコンテンポラリージュエリーアーティストです。ジュエリーを流動的な物語メディアとして捉え、素材の伝統的な定義に絶えず挑戦し、身体への革新的な装着方法を探求しています。</p>
+            <p class="text-sm leading-relaxed text-muted">彼女の作品はジュエリーと人体の共生関係を探求し、特にさまざまな姿勢や状態における装着者と物体の間に生まれる感情的共鳴に焦点を当てています。装着の振り付けと鋭いまたは丸みを帯びた形態の意図的な使用を通じて、人間の最も繊細で微妙な感情を表現し伝えます。</p>
+          </div>
+          <div data-lang-content="ko" class="space-y-6">
+            <p class="text-base leading-relaxed">Ke Li는 현재 런던에 거주하는 현대 주얼리 아티스트입니다. 그녀는 주얼리를 유동적인 서사 매체로 여기며, 재료의 전통적 정의에 끊임없이 도전하고 신체에 작품을 착용하는 혁신적인 방법을 탐구합니다.</p>
+            <p class="text-sm leading-relaxed text-muted">그녀의 작품은 주얼리와 인체 사이의 공생 관계를 탐구하며, 특히 다양한 자세와 상태에서 착용자와 오브제 사이에 나타나는 감정적 공명에 초점을 맞춥니다. 착용의 안무와 날카롭거나 둥근 형태의 의도적 사용을 통해 가장 미묘하고 섬세한 인간 감정을 표현하고 전달합니다.</p>
           </div>
 
           <!-- Education -->
           <div class="mt-10 pt-8 border-t border-border">
             <h4 class="text-xs tracking-[0.15em] uppercase mb-4 text-muted">
               <span data-lang-content="en">Education</span>
+              <span data-lang-content="fr">Formation</span>
+              <span data-lang-content="de">Ausbildung</span>
               <span data-lang-content="zh">教育背景</span>
+              <span data-lang-content="ja">学歴</span>
+              <span data-lang-content="ko">학력</span>
             </h4>
             <div class="space-y-3 text-sm">
               <div class="flex justify-between items-baseline">
                 <div>
-                  <p class="font-medium" data-lang-content="en">MA Jewellery & Metal</p>
+                  <p class="font-medium" data-lang-content="en">MA Jewellery &amp; Metal</p>
+                  <p class="font-medium" data-lang-content="fr">MA Bijouterie &amp; M&eacute;tal</p>
+                  <p class="font-medium" data-lang-content="de">MA Schmuck &amp; Metall</p>
                   <p class="font-medium" data-lang-content="zh">珠宝与金属 硕士</p>
+                  <p class="font-medium" data-lang-content="ja">ジュエリー＆メタル 修士</p>
+                  <p class="font-medium" data-lang-content="ko">주얼리 &amp; 금속 석사</p>
                   <p class="text-muted" data-lang-content="en">Royal College of Art, London</p>
+                  <p class="text-muted" data-lang-content="fr">Royal College of Art, Londres</p>
+                  <p class="text-muted" data-lang-content="de">Royal College of Art, London</p>
                   <p class="text-muted" data-lang-content="zh">皇家艺术学院，伦敦</p>
+                  <p class="text-muted" data-lang-content="ja">ロイヤル・カレッジ・オブ・アート、ロンドン</p>
+                  <p class="text-muted" data-lang-content="ko">로얄 칼리지 오브 아트, 런던</p>
                 </div>
                 <span class="text-muted text-xs">2024</span>
               </div>
               <div class="flex justify-between items-baseline">
                 <div>
                   <p class="font-medium" data-lang-content="en">BA Arts and Crafts</p>
+                  <p class="font-medium" data-lang-content="fr">BA Arts et M&eacute;tiers</p>
+                  <p class="font-medium" data-lang-content="de">BA Kunst und Handwerk</p>
                   <p class="font-medium" data-lang-content="zh">工艺美术 学士</p>
+                  <p class="font-medium" data-lang-content="ja">工芸美術 学士</p>
+                  <p class="font-medium" data-lang-content="ko">공예미술 학사</p>
                   <p class="text-muted" data-lang-content="en">Shandong University of Arts</p>
+                  <p class="text-muted" data-lang-content="fr">Universit&eacute; des Arts du Shandong</p>
+                  <p class="text-muted" data-lang-content="de">Shandong Universit&auml;t der K&uuml;nste</p>
                   <p class="text-muted" data-lang-content="zh">山东工艺美术学院</p>
+                  <p class="text-muted" data-lang-content="ja">山東工芸美術学院</p>
+                  <p class="text-muted" data-lang-content="ko">산동공예미술학원</p>
                 </div>
               </div>
             </div>
@@ -257,7 +336,11 @@
       <div class="reveal">
         <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider mb-4">
           <span data-lang-content="en">Contact</span>
+          <span data-lang-content="fr">Contact</span>
+          <span data-lang-content="de">Kontakt</span>
           <span data-lang-content="zh">联系</span>
+          <span data-lang-content="ja">連絡</span>
+          <span data-lang-content="ko">연락</span>
         </h2>
         <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
       </div>
@@ -266,7 +349,11 @@
         <div>
           <p class="text-xs tracking-[0.15em] uppercase text-muted mb-2">
             <span data-lang-content="en">Email</span>
+            <span data-lang-content="fr">Email</span>
+            <span data-lang-content="de">E-Mail</span>
             <span data-lang-content="zh">邮箱</span>
+            <span data-lang-content="ja">メール</span>
+            <span data-lang-content="ko">이메일</span>
           </p>
           <a href="mailto:keli1002@outlook.com" class="text-base hover:text-muted transition-colors duration-300">keli1002@outlook.com</a>
         </div>
@@ -277,7 +364,11 @@
         <div>
           <p class="text-xs tracking-[0.15em] uppercase text-muted mb-2">
             <span data-lang-content="en">Based in</span>
+            <span data-lang-content="fr">Bas&eacute;e &agrave;</span>
+            <span data-lang-content="de">Standort</span>
             <span data-lang-content="zh">所在地</span>
+            <span data-lang-content="ja">拠点</span>
+            <span data-lang-content="ko">활동지</span>
           </p>
           <p class="text-base">London, UK</p>
         </div>
@@ -289,8 +380,12 @@
   <footer class="py-8 border-t border-border">
     <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted tracking-wider">
       <p>
-        <span data-lang-content="en">&copy; <span id="copyrightYear"></span> Ke Li. All rights reserved.</span>
-        <span data-lang-content="zh">&copy; <span id="copyrightYearZh"></span> Ke Li. 保留所有权利。</span>
+        <span data-lang-content="en">&copy; <span class="copyright-year"></span> Ke Li. All rights reserved.</span>
+        <span data-lang-content="fr">&copy; <span class="copyright-year"></span> Ke Li. Tous droits r&eacute;serv&eacute;s.</span>
+        <span data-lang-content="de">&copy; <span class="copyright-year"></span> Ke Li. Alle Rechte vorbehalten.</span>
+        <span data-lang-content="zh">&copy; <span class="copyright-year"></span> Ke Li. 保留所有权利。</span>
+        <span data-lang-content="ja">&copy; <span class="copyright-year"></span> Ke Li. 無断転載禁止。</span>
+        <span data-lang-content="ko">&copy; <span class="copyright-year"></span> Ke Li. 모든 권리 보유.</span>
       </p>
       <a href="https://www.instagram.com/keliiovo/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">Instagram</a>
     </div>

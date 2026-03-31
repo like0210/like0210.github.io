@@ -172,19 +172,34 @@
     pointer-events: auto;
   }
 
-  /* Language toggle */
-  [data-lang-content="en"] { display: none; }
-  [data-lang-content="zh"] { display: none; }
+  /* Language toggle — hide all lang content by default */
+  [data-lang-content] { display: none; }
 
-  html[data-lang="en"] [data-lang-content="en"] { display: block; }
+  /* Show active language */
+  html[data-lang="en"] [data-lang-content="en"],
+  html[data-lang="fr"] [data-lang-content="fr"],
+  html[data-lang="de"] [data-lang-content="de"],
+  html[data-lang="zh"] [data-lang-content="zh"],
+  html[data-lang="ja"] [data-lang-content="ja"],
+  html[data-lang="ko"] [data-lang-content="ko"] {
+    display: block;
+  }
+
+  /* Inline elements: span, a */
   html[data-lang="en"] span[data-lang-content="en"],
-  html[data-lang="en"] a[data-lang-content="en"] { display: inline; }
-  html[data-lang="en"] [data-lang-content="zh"] { display: none; }
-
-  html[data-lang="zh"] [data-lang-content="zh"] { display: block; }
+  html[data-lang="en"] a[data-lang-content="en"],
+  html[data-lang="fr"] span[data-lang-content="fr"],
+  html[data-lang="fr"] a[data-lang-content="fr"],
+  html[data-lang="de"] span[data-lang-content="de"],
+  html[data-lang="de"] a[data-lang-content="de"],
   html[data-lang="zh"] span[data-lang-content="zh"],
-  html[data-lang="zh"] a[data-lang-content="zh"] { display: inline; }
-  html[data-lang="zh"] [data-lang-content="en"] { display: none; }
+  html[data-lang="zh"] a[data-lang-content="zh"],
+  html[data-lang="ja"] span[data-lang-content="ja"],
+  html[data-lang="ja"] a[data-lang-content="ja"],
+  html[data-lang="ko"] span[data-lang-content="ko"],
+  html[data-lang="ko"] a[data-lang-content="ko"] {
+    display: inline;
+  }
 
   /* Hero height */
   .hero-section {
