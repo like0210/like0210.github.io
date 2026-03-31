@@ -1,0 +1,25 @@
+{
+  "name": "like0210.github.io",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --watch",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/like0210/like0210.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/like0210/like0210.github.io/issues"
+  },
+  "homepage": "https://github.com/like0210/like0210.github.io#readme",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}

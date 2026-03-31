@@ -1,333 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orris London - Fine Jewelry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/orris-london-css.css">
-  <!-- Curator.io Feed -->
-  <script type="text/javascript">
-    /* Replace this with your actual Curator.io feed ID */
-    (function(){
-      var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
-      i.src = "https://cdn.curator.io/published/YOUR_FEED_ID.js";
-      e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-    })();
-  </script>
+  <title>Ke Li — Contemporary Jewellery Artist</title>
+  <meta name="description" content="Ke Li is a contemporary jewellery artist based in London. RCA graduate exploring the symbiotic relationship between jewellery and the human form.">
+  <meta property="og:title" content="Ke Li — Contemporary Jewellery Artist">
+  <meta property="og:description" content="Contemporary jewellery exploring emotion, form, and the body.">
+  <meta property="og:type" content="website">
+  <link rel="preload" href="images/works/breaking-1.jpg" as="image" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header & Navigation -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo-container">
-          <a href="#" class="logo">ORRIS LONDON</a>
-        </div>
-        <nav class="main-nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#collection" class="nav-link">Collection</a></li>
-            <li class="nav-item"><a href="#instagram" class="nav-link">Instagram</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <button class="search-btn"><i class="fas fa-search"></i></button>
-          <a href="mailto:keli1002@outlook.com" class="contact-btn"><i class="fas fa-envelope"></i></a>
-        </div>
-        <button id="menu-toggle" class="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+<body class="bg-white text-secondary antialiased">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#hero" class="font-heading text-xl md:text-2xl tracking-[0.15em] uppercase font-light">
+        Ke Li
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#works" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
+           data-nav-link>
+          <span data-lang-content="en">Works</span>
+          <span data-lang-content="zh">作品</span>
+        </a>
+        <a href="#about" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
+           data-nav-link>
+          <span data-lang-content="en">About</span>
+          <span data-lang-content="zh">关于</span>
+        </a>
+        <a href="#contact" class="text-sm tracking-[0.1em] uppercase nav-link-underline"
+           data-nav-link>
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="zh">联系</span>
+        </a>
+        <button id="langToggle" class="text-sm tracking-[0.1em] uppercase ml-4 border border-primary px-3 py-1 hover:bg-primary hover:text-white transition-colors duration-300" aria-label="Toggle language">
+          中文
         </button>
-      </div>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="block w-6 h-px bg-primary transition-all duration-300 origin-center" id="bar1"></span>
+        <span class="block w-6 h-px bg-primary transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-px bg-primary transition-all duration-300 origin-center" id="bar3"></span>
+      </button>
     </div>
   </header>
-  
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="mobile-menu">
-    <button id="closeMenu" class="close-menu"><i class="fas fa-times"></i></button>
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button id="closeMenu" class="absolute top-5 right-6 text-2xl" aria-label="Close menu">&times;</button>
+    <nav class="flex flex-col items-center gap-8">
+      <a href="#works" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
+        <span data-lang-content="en">Works</span>
+        <span data-lang-content="zh">作品</span>
+      </a>
+      <a href="#about" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
+        <span data-lang-content="en">About</span>
+        <span data-lang-content="zh">关于</span>
+      </a>
+      <a href="#contact" class="font-heading text-3xl font-light tracking-wider mobile-nav-link">
+        <span data-lang-content="en">Contact</span>
+        <span data-lang-content="zh">联系</span>
+      </a>
+      <button id="langToggleMobile" class="text-sm tracking-[0.1em] uppercase border border-primary px-4 py-2 mt-4 hover:bg-primary hover:text-white transition-colors duration-300">
+        中文
+      </button>
     </nav>
-    <div class="mobile-contact">
-      <a href="mailto:keli1002@outlook.com">keli1002@outlook.com</a>
-    </div>
   </div>
-  <div id="overlay" class="overlay"></div>
-  
+
   <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <div class="hero-slider">
-      <div class="slide active">
-        <div class="slide-content">
-          <h1 class="animate-fade-in">Timeless Elegance</h1>
-          <p class="animate-fade-in">Discover our exquisite collection of handcrafted fine jewelry, designed to celebrate life's most precious moments.</p>
-          <a href="#collection" class="primary-btn animate-fade-in">Explore Collection</a>
-        </div>
-        <div class="slide-img">
-          <img src="images/logo.jpg" alt="Orris London Fine Jewelry">
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-content">
-          <h1>Artisan Craftsmanship</h1>
-          <p>Each piece is meticulously crafted by our master jewelers, combining traditional techniques with contemporary design.</p>
-          <a href="#about" class="primary-btn">Our Story</a>
-        </div>
-        <div class="slide-img">
-          <img src="images/logo.jpg" alt="Orris London Craftsmanship">
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-content">
-          <h1>Bespoke Creations</h1>
-          <p>Let us transform your vision into a unique piece of jewelry that tells your personal story.</p>
-          <a href="#contact" class="primary-btn">Contact Us</a>
-        </div>
-        <div class="slide-img">
-          <img src="images/logo.jpg" alt="Orris London Bespoke Jewelry">
-        </div>
-      </div>
-      <div class="slider-controls">
-        <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="slider-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button>
+  <section id="hero" class="hero-section relative flex items-center justify-center overflow-hidden bg-surface">
+    <div class="absolute inset-0">
+      <img src="images/works/breaking-1.jpg" alt="Breaking — Ke Li" class="w-full h-full object-cover opacity-40" fetchpriority="high">
+    </div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.08em] mb-4 animate-fade-in">
+        Ke Li
+      </h1>
+      <p class="text-sm md:text-base tracking-[0.2em] uppercase text-muted animate-slide-up" style="animation-delay: 0.3s;">
+        <span data-lang-content="en">Contemporary Jewellery Artist</span>
+        <span data-lang-content="zh">当代珠宝艺术家</span>
+      </p>
+      <div class="mt-12 animate-fade-in" style="animation-delay: 0.8s;">
+        <a href="#works" class="inline-block text-xs tracking-[0.2em] uppercase border-b border-primary pb-1 hover:pb-2 transition-all duration-300">
+          <span data-lang-content="en">View Works</span>
+          <span data-lang-content="zh">查看作品</span>
+        </a>
       </div>
     </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style="animation-delay: 1.2s;">
+      <div class="w-px h-12 bg-primary/30 mx-auto mb-2"></div>
+    </div>
   </section>
-  
+
+  <!-- Works Section -->
+  <section id="works" class="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto">
+    <div class="reveal">
+      <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider text-center mb-4">
+        <span data-lang-content="en">Works</span>
+        <span data-lang-content="zh">作品</span>
+      </h2>
+      <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
+    </div>
+
+    <!-- Breaking Series -->
+    <article class="mb-20">
+      <div class="reveal">
+        <h3 class="font-heading text-2xl md:text-3xl font-light tracking-wider text-center mb-2">Breaking</h3>
+        <p class="text-center text-muted text-sm tracking-wider mb-12">2026</p>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
+        <button class="reveal overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="0" aria-label="View Breaking — Piece 1">
+          <img src="images/works/breaking-1-thumb.jpg"
+               data-full="images/works/breaking-1.jpg"
+               alt="Breaking — Piece 1"
+               class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+               loading="lazy">
+        </button>
+        <button class="reveal overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="1" aria-label="View Breaking — Piece 2">
+          <img src="images/works/breaking-2-thumb.jpg"
+               data-full="images/works/breaking-2.jpg"
+               alt="Breaking — Piece 2"
+               class="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+               loading="lazy">
+        </button>
+        <button class="reveal md:col-span-2 max-w-2xl mx-auto w-full overflow-hidden cursor-pointer group text-left bg-transparent border-0 p-0" data-lightbox="2" aria-label="View Breaking — Piece 3">
+          <img src="images/works/breaking-3-thumb.jpg"
+               data-full="images/works/breaking-3.jpg"
+               alt="Breaking — Piece 3"
+               class="w-full aspect-[2/3] md:aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+               loading="lazy">
+        </button>
+      </div>
+
+      <!-- Work Details -->
+      <div class="max-w-2xl mx-auto reveal">
+        <div class="mb-8 text-sm text-muted space-y-1">
+          <p data-lang-content="en">
+            <span class="text-secondary">Materials:</span> Silver, natural pig casings, gouache
+          </p>
+          <p data-lang-content="zh">
+            <span class="text-secondary">材料：</span>银、天然猪肠衣、水粉
+          </p>
+          <p data-lang-content="en">
+            <span class="text-secondary">Type:</span> Bracelet / Necklace / Shoulder piece
+          </p>
+          <p data-lang-content="zh">
+            <span class="text-secondary">类型：</span>手镯 / 项链 / 肩饰
+          </p>
+          <p data-lang-content="en">
+            <span class="text-secondary">Techniques:</span> Thermal pigment integration, organic tension shaping
+          </p>
+          <p data-lang-content="zh">
+            <span class="text-secondary">工艺：</span>热颜料融合、有机张力塑形
+          </p>
+        </div>
+
+        <div data-lang-content="en" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>By combining organic membranes with internal armatures, this work simulates the morphological transformations driven by shifting emotional landscapes. It manifests through various states of struggle, fluidity, and sharpness. The natural shrinkage of the membrane during the drying process represents a dual movement: a quest for structural support and a form of self-imposed constraint. These pieces capture the evolving forms that emerge from the emotional flux between establishing defence mechanisms and seeking the boundaries of comfort.</p>
+          <p>The translucent membrane serves as a symbol for the soul or the subconscious, while the rigid metal framework acts as a metaphor for the shackles of the material world. The progression from rounded latency to sharp confrontation is more than a physical material process — it is a visual mapping of internal reactions as they manifest into external forms.</p>
+        </div>
+        <div data-lang-content="zh" class="text-sm leading-relaxed text-muted space-y-4">
+          <p>通过将有机薄膜与内部骨架相结合，这件作品模拟了由不断变化的情感景观驱动的形态转变。它通过挣扎、流动和尖锐的各种状态来呈现。薄膜在干燥过程中的自然收缩代表着一种双重运动：对结构支撑的追寻，以及一种自我施加的约束。这些作品捕捉了在建立防御机制与寻找舒适边界之间的情感波动中涌现的演变形态。</p>
+          <p>半透明的薄膜象征着灵魂或潜意识，而坚硬的金属框架则隐喻着物质世界的枷锁。从圆润的潜伏到尖锐的对抗，不仅仅是一个物理材料过程——它是内在反应显化为外在形态的视觉映射。</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
   <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Story</h2>
-        <p>The art of fine jewelry making</p>
+  <section id="about" class="py-20 md:py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="reveal">
+        <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider text-center mb-4">
+          <span data-lang-content="en">About</span>
+          <span data-lang-content="zh">关于</span>
+        </h2>
+        <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
       </div>
-      <div class="about-content">
-        <div class="about-image">
-          <div class="image-frame">
-            <img src="images/logo.jpg" alt="Orris London Workshop">
-          </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start max-w-5xl mx-auto">
+        <!-- Image -->
+        <div class="reveal overflow-hidden">
+          <img src="images/works/breaking-2.jpg" alt="Ke Li — Artist" class="w-full aspect-[4/5] object-cover" loading="lazy" decoding="async">
         </div>
-        <div class="about-text">
-          <p>Founded in London with a passion for creating timeless beauty, Orris London represents the pinnacle of fine jewelry creation. Our journey began with a simple belief: that every piece of jewelry should tell a unique story and be crafted with the utmost attention to detail.</p>
-          <p>Today, we continue to create exquisite pieces that celebrate life's most precious moments, combining rare gemstones with innovative design to create heirlooms for the modern era.</p>
-          <div class="about-features">
-            <div class="feature">
-              <div class="feature-icon">
-                <img src="images/jewelry-icon.svg" alt="Craftsmanship">
+
+        <!-- Bio -->
+        <div class="reveal">
+          <!-- Artist Statement -->
+          <div data-lang-content="en" class="space-y-6">
+            <p class="text-base leading-relaxed">Ke Li is a contemporary jewellery artist currently based in London. She regards jewellery as a fluid narrative medium, continuously challenging the traditional definitions of materials and exploring innovative ways of wearing pieces on the body.</p>
+            <p class="text-sm leading-relaxed text-muted">Her work investigates the symbiotic relationship between jewellery and the human form, specifically focusing on the emotional resonance that emerges between the wearer and the object under varying postures and states. Through the choreography of wearing and the deliberate use of sharp or rounded forms, she manifests and communicates the most subtle and delicate of human emotions.</p>
+          </div>
+          <div data-lang-content="zh" class="space-y-6">
+            <p class="text-base leading-relaxed">李可是一位目前居住在伦敦的当代珠宝艺术家。她将珠宝视为一种流动的叙事媒介，不断挑战材料的传统定义，探索将作品佩戴于身体上的创新方式。</p>
+            <p class="text-sm leading-relaxed text-muted">她的作品探索珠宝与人体之间的共生关系，特别关注佩戴者与物品在不同姿态和状态下产生的情感共鸣。通过佩戴的编排以及对尖锐或圆润形态的刻意运用，她呈现并传达了人类最微妙、最细腻的情感。</p>
+          </div>
+
+          <!-- Education -->
+          <div class="mt-10 pt-8 border-t border-border">
+            <h4 class="text-xs tracking-[0.15em] uppercase mb-4 text-muted">
+              <span data-lang-content="en">Education</span>
+              <span data-lang-content="zh">教育背景</span>
+            </h4>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="font-medium" data-lang-content="en">MA Jewellery & Metal</p>
+                  <p class="font-medium" data-lang-content="zh">珠宝与金属 硕士</p>
+                  <p class="text-muted" data-lang-content="en">Royal College of Art, London</p>
+                  <p class="text-muted" data-lang-content="zh">皇家艺术学院，伦敦</p>
+                </div>
+                <span class="text-muted text-xs">2024</span>
               </div>
-              <h3>Artisan Craftsmanship</h3>
-              <p>Handcrafted by master jewelers</p>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <img src="images/jewelry-icon.svg" alt="Materials">
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="font-medium" data-lang-content="en">BA Arts and Crafts</p>
+                  <p class="font-medium" data-lang-content="zh">工艺美术 学士</p>
+                  <p class="text-muted" data-lang-content="en">Shandong University of Arts</p>
+                  <p class="text-muted" data-lang-content="zh">山东工艺美术学院</p>
+                </div>
               </div>
-              <h3>Finest Materials</h3>
-              <p>Ethically sourced gemstones</p>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <img src="images/jewelry-icon.svg" alt="Design">
-              </div>
-              <h3>Timeless Design</h3>
-              <p>Contemporary elegance</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Collection Section -->
-  <section id="collection" class="collection-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Collection</h2>
-        <p>Exquisite pieces for every occasion</p>
-      </div>
-      <div class="collection-filter">
-        <button class="category-btn active" data-category="all">All</button>
-        <button class="category-btn" data-category="rings">Rings</button>
-        <button class="category-btn" data-category="necklaces">Necklaces</button>
-        <button class="category-btn" data-category="earrings">Earrings</button>
-        <button class="category-btn" data-category="bracelets">Bracelets</button>
-      </div>
-      <div class="collection-grid">
-        <!-- Collection Items -->
-        <div class="collection-item" data-category="rings">
-          <div class="item-image">
-            <div class="image-overlay">
-              <button class="view-btn"><i class="fas fa-eye"></i></button>
-            </div>
-          </div>
-          <div class="item-info">
-            <h3>Diamond Solitaire</h3>
-            <p>Platinum ring with ethically sourced diamond</p>
-          </div>
-        </div>
-        <div class="collection-item" data-category="necklaces">
-          <div class="item-image">
-            <div class="image-overlay">
-              <button class="view-btn"><i class="fas fa-eye"></i></button>
-            </div>
-          </div>
-          <div class="item-info">
-            <h3>Sapphire Pendant</h3>
-            <p>18k gold necklace with blue sapphire</p>
-          </div>
-        </div>
-        <div class="collection-item" data-category="earrings">
-          <div class="item-image">
-            <div class="image-overlay">
-              <button class="view-btn"><i class="fas fa-eye"></i></button>
-            </div>
-          </div>
-          <div class="item-info">
-            <h3>Pearl Drop</h3>
-            <p>White gold earrings with South Sea pearls</p>
-          </div>
-        </div>
-        <div class="collection-item" data-category="bracelets">
-          <div class="item-image">
-            <div class="image-overlay">
-              <button class="view-btn"><i class="fas fa-eye"></i></button>
-            </div>
-          </div>
-          <div class="item-info">
-            <h3>Tennis Bracelet</h3>
-            <p>Diamond bracelet in 18k rose gold</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Instagram Section -->
-  <section id="instagram" class="instagram-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Follow Us on Instagram</h2>
-        <p>@orris.london</p>
-      </div>
-      <div class="curator-feed-default">
-        <!-- Curator.io feed will be inserted here -->
-      </div>
-    </div>
-  </section>
-  
+
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Contact Us</h2>
-        <p>We'd love to hear from you</p>
+  <section id="contact" class="py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 text-center">
+      <div class="reveal">
+        <h2 class="font-heading text-3xl md:text-4xl font-light tracking-wider mb-4">
+          <span data-lang-content="en">Contact</span>
+          <span data-lang-content="zh">联系</span>
+        </h2>
+        <div class="w-12 h-px bg-primary mx-auto mb-16"></div>
       </div>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3>Email</h3>
-            <p><a href="mailto:keli1002@outlook.com">keli1002@outlook.com</a></p>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3>Location</h3>
-            <p>London, United Kingdom</p>
-          </div>
-          <div class="social-links">
-            <a href="https://www.instagram.com/orris.london/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
+
+      <div class="reveal max-w-md mx-auto space-y-6">
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-muted mb-2">
+            <span data-lang-content="en">Email</span>
+            <span data-lang-content="zh">邮箱</span>
+          </p>
+          <a href="mailto:keli1002@outlook.com" class="text-base hover:text-muted transition-colors duration-300">keli1002@outlook.com</a>
+        </div>
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-muted mb-2">Instagram</p>
+          <a href="https://www.instagram.com/keliiovo/" target="_blank" rel="noopener noreferrer" class="text-base hover:text-muted transition-colors duration-300">@keliiovo</a>
+        </div>
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-muted mb-2">
+            <span data-lang-content="en">Based in</span>
+            <span data-lang-content="zh">所在地</span>
+          </p>
+          <p class="text-base">London, UK</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Quick View Modal -->
-  <div id="quickViewModal" class="modal">
-    <div class="modal-content">
-      <button class="close-modal"><i class="fas fa-times"></i></button>
-      <div class="product-details">
-        <div class="product-image">
-          <img src="images/logo.jpg" alt="Product">
-        </div>
-        <div class="product-info">
-          <h2>Diamond Solitaire Ring</h2>
-          <p class="product-description">A stunning solitaire ring featuring a brilliant-cut diamond set in platinum. The minimalist design allows the beauty of the ethically sourced diamond to take center stage.</p>
-          <div class="product-meta">
-            <p><strong>Material:</strong> Platinum</p>
-            <p><strong>Stone:</strong> Diamond</p>
-            <p><strong>Carat:</strong> 1.0</p>
-          </div>
-          <div class="product-actions">
-            <div class="quantity">
-              <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
-              <input type="number" value="1" min="1">
-              <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
-            </div>
-            <button class="primary-btn">Inquire Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <h3>ORRIS LONDON</h3>
-          <p>Fine Jewelry</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-nav">
-            <h4>Navigation</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#collection">Collection</a></li>
-              <li><a href="#instagram">Instagram</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-social">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-              <a href="https://www.instagram.com/orris.london/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Orris London. All Rights Reserved.</p>
-      </div>
+  <footer class="py-8 border-t border-border">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted tracking-wider">
+      <p>
+        <span data-lang-content="en">&copy; <span id="copyrightYear"></span> Ke Li. All rights reserved.</span>
+        <span data-lang-content="zh">&copy; <span id="copyrightYearZh"></span> Ke Li. 保留所有权利。</span>
+      </p>
+      <a href="https://www.instagram.com/keliiovo/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">Instagram</a>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav" style="left: 1rem;" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav" style="right: 1rem;" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  </div>
 
-  <!-- Scripts -->
-  <script src="js/orris-london-js.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
