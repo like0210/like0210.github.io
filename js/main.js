@@ -30,8 +30,10 @@
   function highlightActiveLang(lang) {
     // Desktop: highlight active option in dropdown
     document.querySelectorAll('.lang-option').forEach(function (btn) {
-      btn.classList.toggle('font-medium', btn.getAttribute('data-lang-value') === lang);
-      btn.classList.toggle('text-muted', btn.getAttribute('data-lang-value') !== lang);
+      var isActive = btn.getAttribute('data-lang-value') === lang;
+      btn.classList.toggle('font-medium', isActive);
+      btn.classList.toggle('text-muted', !isActive);
+      btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
     });
     // Mobile: highlight active flag
     document.querySelectorAll('.lang-option-mobile').forEach(function (btn) {
@@ -51,37 +53,84 @@
   // ─── Desktop Language Dropdown ─────────────────────────────
   var langToggleBtn = document.getElementById('langToggle');
   var langMenu = document.getElementById('langMenu');
+  var langOptions = langMenu.querySelectorAll('.lang-option');
 
   function openLangMenu() {
-    langMenu.classList.remove('opacity-0', 'pointer-events-none');
+    langMenu.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
     langMenu.classList.add('opacity-100');
+    langMenu.setAttribute('aria-hidden', 'false');
     langToggleBtn.setAttribute('aria-expanded', 'true');
+    langOptions.forEach(function (btn) { btn.setAttribute('tabindex', '0'); });
+    // Focus the currently active option
+    var currentLang = document.documentElement.getAttribute('data-lang');
+    var activeOption = langMenu.querySelector('[data-lang-value="' + currentLang + '"]');
+    if (activeOption) activeOption.focus();
   }
 
   function closeLangMenu() {
-    langMenu.classList.add('opacity-0', 'pointer-events-none');
+    langMenu.classList.add('opacity-0', 'pointer-events-none', 'invisible');
     langMenu.classList.remove('opacity-100');
+    langMenu.setAttribute('aria-hidden', 'true');
     langToggleBtn.setAttribute('aria-expanded', 'false');
+    langOptions.forEach(function (btn) { btn.setAttribute('tabindex', '-1'); });
   }
 
   langToggleBtn.addEventListener('click', function (e) {
     e.stopPropagation();
     var isOpen = langToggleBtn.getAttribute('aria-expanded') === 'true';
-    if (isOpen) { closeLangMenu(); } else { openLangMenu(); }
+    if (isOpen) { closeLangMenu(); langToggleBtn.focus(); } else { openLangMenu(); }
   });
 
   // Desktop dropdown options
-  document.querySelectorAll('.lang-option').forEach(function (btn) {
+  langOptions.forEach(function (btn) {
     btn.addEventListener('click', function () {
       setLang(btn.getAttribute('data-lang-value'));
       closeLangMenu();
+      langToggleBtn.focus();
     });
   });
 
-  // Mobile flag options
+  // Keyboard navigation for dropdown
+  langMenu.addEventListener('keydown', function (e) {
+    var items = Array.from(langOptions);
+    var currentIndex = items.indexOf(document.activeElement);
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeLangMenu();
+      langToggleBtn.focus();
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      var next = (currentIndex + 1) % items.length;
+      items[next].focus();
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      var prev = (currentIndex - 1 + items.length) % items.length;
+      items[prev].focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      items[0].focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      items[items.length - 1].focus();
+    }
+  });
+
+  // Close dropdown when focus leaves the container
+  document.getElementById('langDropdown').addEventListener('focusout', function (e) {
+    var container = document.getElementById('langDropdown');
+    setTimeout(function () {
+      if (!container.contains(document.activeElement)) {
+        closeLangMenu();
+      }
+    }, 0);
+  });
+
+  // Mobile flag options — close overlay after selecting
   document.querySelectorAll('.lang-option-mobile').forEach(function (btn) {
     btn.addEventListener('click', function () {
       setLang(btn.getAttribute('data-lang-value'));
+      closeMobileMenu();
     });
   });
 

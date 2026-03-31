@@ -42,14 +42,14 @@
           <span data-lang-content="zh">联系</span>
         </a>
         <div class="relative ml-4" id="langDropdown">
-          <button id="langToggle" class="text-xl leading-none p-1 hover:opacity-70 transition-opacity duration-300" aria-label="Switch language" aria-expanded="false" aria-haspopup="true">
+          <button id="langToggle" class="text-xl leading-none p-1 hover:opacity-70 transition-opacity duration-300" aria-label="Switch language" aria-expanded="false" aria-haspopup="true" aria-controls="langMenu">
             🌐
           </button>
-          <div id="langMenu" class="absolute right-0 top-full mt-2 bg-white border border-border shadow-md py-1 min-w-[120px] opacity-0 pointer-events-none transition-opacity duration-200 z-50">
-            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="en">
+          <div id="langMenu" class="absolute right-0 top-full mt-2 bg-white border border-border shadow-md py-1 min-w-[120px] opacity-0 pointer-events-none invisible transition-opacity duration-200 z-50" role="menu" aria-hidden="true">
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="en" role="menuitemradio" tabindex="-1">
               🇬🇧 English
             </button>
-            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="zh">
+            <button class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-surface transition-colors duration-200 flex items-center gap-2" data-lang-value="zh" role="menuitemradio" tabindex="-1">
               🇨🇳 中文
             </button>
           </div>
