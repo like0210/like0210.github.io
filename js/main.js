@@ -7,7 +7,10 @@
   'use strict';
 
   // ─── Language System ────────────────────────────────────────
-  var savedLang = localStorage.getItem('lang') || 'en';
+  var browserLang = (navigator.language || '').slice(0, 2);
+  var supported = ['en', 'fr', 'de', 'zh', 'ja', 'ko'];
+  var defaultLang = supported.indexOf(browserLang) !== -1 ? browserLang : 'en';
+  var savedLang = localStorage.getItem('lang') || defaultLang;
   document.documentElement.setAttribute('data-lang', savedLang);
   document.documentElement.setAttribute('lang', savedLang);
 
