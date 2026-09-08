@@ -37,7 +37,7 @@
   if (isPortfolio) {
     supported.forEach(function (lang) {
       metaTitle[lang] = 'Ke Li — Portfolio';
-      metaDesc[lang] = 'Eden, Shape of Traveling Memory, Psychotherapy and Symbiotic relief. Jewellery & Metal, 2022–2024.';
+      metaDesc[lang] = 'Symbiotic relief, Psychotherapy, Eden and Shape of Traveling Memory. Jewellery & Metal, 2022–2024.';
     });
   }
   var labels = {
