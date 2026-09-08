@@ -26,9 +26,9 @@ python3 tools/build_portfolio.py     # Regenerate portfolio.html sections + inde
 
 ## Architecture
 
-- `index.html` — Home: Hero (Symbiotic relief) → `#works` "Portfolio" section with four preview cards → About → Contact → Footer
+- `index.html` — Home: Hero (Symbiotic relief) → `#works` "Portfolio" section with three aligned preview cards (first three series, object photographs, square crop via `aspect-ratio`) → About → Contact → Footer
 - `portfolio.html` — The only complete artwork destination. Series order is fixed by the artist's decision:
-  **01 Symbiotic relief → 02 Psychotherapy → 03 Eden → 04 Shape of Traveling Memory**. Keep the homepage cards, the `.portfolio-index` nav, the meta description (also duplicated in `js/main.js`) and the docs in the same order.
+  **01 Symbiotic relief → 02 Psychotherapy → 03 Eden → 04 Shape of Traveling Memory**. Keep the homepage cards, the `.portfolio-index` nav, the meta description (also duplicated in `js/main.js`) and the docs in the same order. No project years are displayed anywhere (section labels, captions, cards, source lines).
 - The four `<section class="portfolio-collection">` blocks and the homepage cards are **generated** by `tools/build_portfolio.py` from the manifest inside that script. Do not hand-edit figures: change the manifest (order, captions, alt text, excerpts), re-run the script, then `npm run build`.
 - Each series = finished photographs in `.portfolio-gallery`, followed by labelled `.process-strip` groups (inspiration, sketches, material experiments, making process). Every image in a `.gallery-row` shares one height; widths follow the `--ar` custom property (aspect ratio). Single images use `--w`, over-tall rows use `--row-w`. Below 760 px works stack in one column and strips become a two-column grid.
 - `src/input.css` — Tailwind source with the custom theme, layout rules, language visibility and dialog styles. `css/style.css` is built output (do not edit).
@@ -43,6 +43,7 @@ python3 tools/build_portfolio.py     # Regenerate portfolio.html sections + inde
 - Psychotherapy: never show the personal health narrative from LIKE - RCA p.1 or research collages containing medical imaging.
 - When an image leaves the site, delete its files; never reuse a filename for different content.
 - Update `images/portfolio/SOURCES.md` and `README.md` counts whenever images change.
+- Footer "Elsewhere" links: Keli Jewellery → https://kelijewellery.com/, Orris → https://orris.kelijewellery.com/ (both pages).
 
 ## Post-Change Review (MANDATORY)
 

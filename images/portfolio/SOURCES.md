@@ -1,12 +1,12 @@
 # Portfolio asset sources
 
-The Portfolio page is the single complete artwork destination. The homepage contains linked previews (four cards in the same order as Portfolio), not separate project statements. Titles and artwork information follow Ke Li's supplied portfolios.
+The Portfolio page is the single complete artwork destination. The homepage contains three linked preview cards (Symbiotic relief, Psychotherapy, Eden — object photographs), not separate project statements. Titles and artwork information follow Ke Li's supplied portfolios. The site does not display project dates; the years mentioned below describe the source documents only.
 
 ## Archive attribution
 
 Series order on the site since the September 2026 revision: 01 Symbiotic relief, 02 Psychotherapy, 03 Eden, 04 Shape of Traveling Memory. Slide numbers below follow the Keynote navigator order, recovered from each .key package's Index metadata.
 
-- Symbiotic relief: LIKE - RCA.pdf, pages 4–6, dated 2022. Both excerpts come from page 4. Supporting rows come from 项目三核废水.key as specified by the site owner: inspiration from slides 13, 15 and 16 (slides 5 and 12 were left out because they are built from third-party news graphics and found photographs), sketches from slides 20–23, material experiments from slides 27–30, and wrapping tests from slide 33. The user confirmed that Breaking and Symbiotic relief are the same series; the website follows this original portfolio's title, 2022 date, and material labels and does not present Breaking as a separate series.
+- Symbiotic relief: LIKE - RCA.pdf, pages 4–6, dated 2022. Both excerpts come from page 4. Supporting rows come from 项目三核废水.key as specified by the site owner: inspiration from slides 13, 15 and 16 (slides 5 and 12 were left out because they are built from third-party news graphics and found photographs), sketches from slides 20–23, material experiments from slides 27–30, and wrapping tests from slide 33. The user confirmed that Breaking and Symbiotic relief are the same series; the website follows this original portfolio's title and material labels (dates are not displayed) and does not present Breaking as a separate series.
 - Psychotherapy: LIKE - RCA.pdf, pages 1–3, dated 2022. The personal health narrative on page 1 is omitted. The two short excerpts are the artist's own experiment captions from 项目二 疾病.key. Supporting rows come from the same file as specified by the site owner: design sketches from slides 16–18 and the making process from slides 20–23. Research collages that contain medical imaging or documents are not published.
 - Eden: Jewellery & Metal Portfolio, 2023–2024 (PRP KeLi.pdf / PRP KeLi.key), slides 1, 3, 6, 12–14, 16, 18–19, 21, 23 and 25. Excerpts come from pages 4, 16, 20 and 24. The date range follows the original portfolio cover.
 - Shape of Traveling Memory: LIKE - RCA.pdf, pages 7–11, dated 2022. Excerpts come from pages 7, 8 and 11. Process photographs come from 项目一 旅行.key.
