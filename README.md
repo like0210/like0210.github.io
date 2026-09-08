@@ -11,9 +11,22 @@ MA Jewellery & Metal, Royal College of Art (2024) | BA Arts and Crafts, Shandong
 ## Tech Stack
 
 - HTML + [Tailwind CSS v4](https://tailwindcss.com/) + Vanilla JS
-- Bilingual (English / Chinese) with language toggle
-- Single-page site: Hero, Works, About, Contact
+- Six languages: English, French, German, Chinese, Japanese, and Korean; browser-language default with a saved preference
+- Two-page artist website: a homepage with linked series previews, biography and contact; Portfolio is the only complete artwork destination
 - No frameworks — zero runtime dependencies
+- `portfolio.html` — Eden, Symbiotic relief, Shape of Traveling Memory, and Psychotherapy, using 19 original images and short English excerpts; source mapping is in `images/portfolio/SOURCES.md`
+
+## Design and interaction
+
+An exhibition-catalogue layout uses warm white, muted green, serif typography, and asymmetric spacing. The homepage leads with Symbiotic relief, followed by three series previews linking directly to Portfolio anchors. Full collection photography, material information and source excerpts appear only in Portfolio. Original image proportions are preserved.
+
+Navigation is consistently Portfolio / About / Contact; the wordmark returns home. About and Contact remain homepage sections. Elsewhere in the footer holds the low-key Keli Jewellery and Orris links. Email and Instagram display link labels rather than account details (their destinations remain in the HTML). Chinese name text is visible only in Chinese mode.
+
+The user confirmed that Breaking and Symbiotic relief are the same series. Public artwork labels now follow LIKE - RCA.pdf: Symbiotic relief, 2022. The three existing `images/works/breaking-*` URLs are retained and merged into its seven-image gallery. Existing `index.html#works` links still reach the homepage preview section; all four Portfolio anchors remain valid. Eden’s 2023–2024 date range follows the portfolio cover, as noted beside its source citation.
+
+Portfolio image links open a native dialog with previous/next controls, arrow-key navigation, an image counter, loading/error feedback, and Escape to close. Native dialogs contain keyboard focus and return it to the opener. The mobile menu closes on navigation and when resizing to desktop. The site respects reduced motion and keeps content, navigation, and full-image links usable without JavaScript. Language storage is optional: blocked storage does not prevent the page from working.
+
+Edit `src/input.css` for styling, `index.html` for the six content translations, and `js/main.js` for localized interface labels and interactions. Always rebuild `css/style.css` after editing source styles or utility classes.
 
 ## Development
 
