@@ -218,7 +218,6 @@
     sections.forEach(function (section) {
       if (section.getBoundingClientRect().top <= 150) current = section.id;
     });
-    if (!isPortfolio && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = 'contact';
     navLinks.forEach(function (link) {
       if (link.getAttribute('href') === '#' + current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');

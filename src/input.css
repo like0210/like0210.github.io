@@ -133,16 +133,6 @@
   .about-copy h4 { font-family: var(--font-body); font-size: 9px; }
   .about-copy .items-baseline { gap: 20px; }
   .about-copy .items-baseline p { font-size: 11px; line-height: 1.8; }
-  .contact-section { padding-block: 84px 92px; }
-  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10%; align-items: center; margin-top: 62px; }
-  .contact-heading { font-size: clamp(44px, 5.3vw, 78px); line-height: 1.04; letter-spacing: -.04em; }
-  .contact-heading em { color: var(--color-primary); }
-  .contact-links { display: grid; gap: 24px; }
-  .contact-links > div > p:first-child { font-size: 9px; }
-  .contact-links > div > p:last-child { font-size: 12px; }
-  .contact-link { display: flex; gap: 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-block: 3px 12px; font-size: clamp(13px, 1.5vw, 19px); letter-spacing: -.025em; text-decoration: none; overflow-wrap: anywhere; }
-  .contact-link:hover { color: var(--color-primary); border-color: var(--color-primary); }
-  .contact-link > [aria-hidden] { font-size: 21px; }
   .site-footer { border-top: 1px solid var(--color-border); }
   .footer-directory { display: grid; grid-template-columns: 1.5fr .7fr 1.2fr .7fr; gap: 48px; padding-block: 60px; }
   .footer-brand > p { max-width: 28ch; margin-top: 18px; font-size: 11px; line-height: 1.8; color: var(--color-muted); }
@@ -191,8 +181,7 @@
   html[data-lang="ja"] span[data-lang-content="ja"],
   html[data-lang="ko"] span[data-lang-content="ko"] { display: inline; }
   html:is([lang="zh"], [lang="ja"], [lang="ko"]) .hero-statement,
-  html:is([lang="zh"], [lang="ja"], [lang="ko"]) .about-heading h3,
-  html:is([lang="zh"], [lang="ja"], [lang="ko"]) .contact-heading { line-height: 1.5; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: .01em; }
+  html:is([lang="zh"], [lang="ja"], [lang="ko"]) .about-heading h3 { line-height: 1.5; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: .01em; }
   html:is([lang="zh"], [lang="ja"], [lang="ko"]) em { font-style: normal; }
 
   @media (min-width: 1600px) {
@@ -270,11 +259,6 @@
     .about-heading h3 { font-size: 48px; }
     .artist-signature { margin-top: 25px; font-size: 26px; }
     .about-copy > [data-lang-content] > p:first-child { font-size: 16px; }
-    .contact-section { padding-block: 54px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 38px; margin-top: 36px; }
-    .contact-heading { font-size: 56px; }
-    .contact-link { font-size: 18px; }
-    .contact-links { gap: 22px; }
     .footer-directory { grid-template-columns: 1fr 1fr; gap: 36px 28px; padding-block: 40px; }
     .footer-brand { grid-column: 1 / -1; }
     .footer-projects { grid-column: 2; grid-row: 2 / 4; }
@@ -284,8 +268,7 @@
     .lightbox { padding: 16px; }
     .lightbox[open] { gap: 12px; }
     html:is([lang="zh"], [lang="ja"], [lang="ko"]) .hero-statement { font-size: 30px; }
-    html:is([lang="zh"], [lang="ja"], [lang="ko"]) .about-heading h3,
-    html:is([lang="zh"], [lang="ja"], [lang="ko"]) .contact-heading { font-size: 36px; }
+    html:is([lang="zh"], [lang="ja"], [lang="ko"]) .about-heading h3 { font-size: 36px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
