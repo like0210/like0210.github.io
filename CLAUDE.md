@@ -60,3 +60,11 @@ Available Codex commands:
 ## Deployment
 
 Push to `master` → GitHub Pages auto-deploys at `studio.kelijewellery.com`. Run `npm run build` before committing to ensure `css/style.css` is up to date.
+
+The custom domain rests on three pieces — all required, none of them obvious from the code:
+
+- **Root `CNAME` file** = `studio.kelijewellery.com`. This is what makes Pages claim the domain; if it is deleted the site drops back to `like0210.github.io`. `tools/build_portfolio.py` never touches it, and no build step should.
+- **Cloudflare DNS** (`kelijewellery.com` zone): `CNAME studio → like0210.github.io`, proxy status **DNS only**. Do not switch it to Proxied — GitHub Pages has to reach Let's Encrypt itself to issue and renew the certificate. (The `orris.` record in the same zone is Proxied because it fronts Cloudflare Pages; different mechanism, do not copy it.)
+- **Pages settings**: custom domain set, DNS check green, **Enforce HTTPS** on. Only the repo owner account (`like0210`) can change these; collaborators get "You don't have access to repository options" and the Pages REST API answers 404 for them.
+
+`like0210.github.io` 301-redirects to the custom domain and preserves the path, so previously published links still resolve. Keep `og:url`, `og:image` and `canonical` in both pages — and the `og:image` literal in `tools/build_portfolio.py` — pointed at the custom domain.
