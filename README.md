@@ -43,6 +43,8 @@ python3 -m http.server 8000
 
 Push to `master` → GitHub Pages auto-deploys. Run `npm run build` before committing to ensure `css/style.css` is up to date.
 
+The site is served at the custom domain through the root `CNAME` file; its DNS record must stay unproxied, or the certificate cannot be renewed. `CLAUDE.md` has the details.
+
 ## License
 
 All artwork and content copyright Ke Li. Code is available under MIT License.
