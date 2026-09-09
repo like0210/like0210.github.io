@@ -6,7 +6,7 @@ MA Jewellery & Metal, Royal College of Art (2024) | BA Arts and Crafts, Shandong
 
 ## Live Site
 
-[like0210.github.io](https://like0210.github.io)
+[studio.kelijewellery.com](https://studio.kelijewellery.com)
 
 ## Tech Stack
 

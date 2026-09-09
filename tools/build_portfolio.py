@@ -292,7 +292,7 @@ def build_portfolio():
     META_DESC = "Symbiotic relief, Psychotherapy, Eden and Shape of Traveling Memory. Jewellery &amp; Metal."
     src = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{META_DESC}">', src, count=1)
     src = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="Jewellery &amp; Metal. Selected works from Ke Li’s original portfolios.">', src, count=1)
-    src = re.sub(r'<meta property="og:image" content="[^"]*">', '<meta property="og:image" content="https://like0210.github.io/images/works/breaking-1.jpg">', src, count=1)
+    src = re.sub(r'<meta property="og:image" content="[^"]*">', '<meta property="og:image" content="https://studio.kelijewellery.com/images/works/breaking-1.jpg">', src, count=1)
     src = re.sub(r'<meta property="og:image:alt" content="[^"]*">', '<meta property="og:image:alt" content="Symbiotic relief — translucent green membrane over a circular metal framework, by Ke Li">', src, count=1)
     assert META_DESC in src and 'images/works/breaking-1.jpg">' in src
     open(path, "w", encoding="utf-8").write(src)

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal portfolio website for **Ke Li** (李可), a contemporary jewellery artist based in London. MA Jewellery & Metal from the Royal College of Art (2024), BA from Shandong University of Arts. Her practice explores the symbiotic relationship between jewellery and the human form.
 
-Hosted on GitHub Pages at `like0210.github.io`.
+Hosted on GitHub Pages and served at the custom domain `studio.kelijewellery.com` (the `like0210.github.io` URL 301-redirects there).
 
 ## Tech Stack
 
@@ -59,4 +59,4 @@ Available Codex commands:
 
 ## Deployment
 
-Push to `master` → GitHub Pages auto-deploys at `like0210.github.io`. Run `npm run build` before committing to ensure `css/style.css` is up to date.
+Push to `master` → GitHub Pages auto-deploys at `studio.kelijewellery.com`. Run `npm run build` before committing to ensure `css/style.css` is up to date.
